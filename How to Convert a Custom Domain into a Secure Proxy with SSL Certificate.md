@@ -290,3 +290,71 @@ curl -I https://app.example.com
 
 ✅ **Cloudflared is now successfully set up, and your subdomains are securely routed! 🚀**  
 📌 **If you encounter any issues, drop a message for troubleshooting assistance.**
+
+### **🛑 How to Stop a Cloudflared Tunnel to Edit `config.yml` and Add a New Domain**  
+
+If you need to **stop the tunnel temporarily** to update your `config.yml` file and add a new domain, follow these steps:
+
+---
+
+## **🚫 Stop the Cloudflared Tunnel**  
+If the tunnel is running manually via `cloudflared tunnel run`, stop it with:  
+```bash
+pkill cloudflared
+```
+📌 **This will terminate any running Cloudflared processes.**  
+
+Alternatively, find the process ID (PID) and kill it manually:
+```bash
+ps aux | grep cloudflared
+kill <PID>
+```
+📌 **Replace `<PID>` with the actual process ID from the command output.**  
+
+---
+
+## **🛠 Edit `config.yml` to Add a New Domain**  
+Once the tunnel is stopped, open the `config.yml` file for editing:  
+```bash
+nano ~/.cloudflared/config.yml
+```
+📌 **Add the new domain under the `ingress` section like this:**  
+```yaml
+ingress:
+  - hostname: new.example.com
+    service: http://192.168.1.200:8080
+  - hostname: app.example.com
+    service: http://192.168.1.100:80
+  - hostname: dashboard.example.com
+    service: http://192.168.1.100:9000
+  - service: http_status:404
+```
+📌 **Replace `new.example.com` with your actual new domain and the corresponding internal service IP.**  
+
+🔹 **After editing, save the file and exit (in nano: press `CTRL + X`, then `Y`, then `Enter`).**
+
+---
+
+## **✅ Restart the Cloudflared Tunnel**  
+After updating `config.yml`, restart the tunnel with:  
+```bash
+cloudflared tunnel run your-tunnel-name
+```
+📌 **Replace `your-tunnel-name` with your actual tunnel name.**  
+
+Then back to Step 9: Keep Cloudflared Running After Reboot.
+
+---
+
+## **🔎 Verify the Tunnel is Running Properly**  
+Check the tunnel status using:  
+```bash
+cloudflared tunnel list
+```
+Or test if the new domain is working:  
+```bash
+curl -I https://new.example.com
+```
+📌 **If you receive `HTTP 200 OK`, the new domain is successfully added and working! 🎉**  
+
+🚀 **Now, you can manage and update your tunnel without needing to restart your entire server!** 🔥
