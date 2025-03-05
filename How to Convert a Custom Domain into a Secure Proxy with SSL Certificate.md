@@ -160,7 +160,7 @@ ls -la
 
 📌 **You will see an output like this:**
 ```
--r-------- 1 root root  175 Mar  2 22:19 my-secure-tunnel.json
+-r-------- 1 root root  175 Mar  2 22:19 your-secure-tunnel.json
 -rw------- 1 root root  266 Mar  2 22:17 cert.pem
 -rw-r--r-- 1 root root  448 Mar  3 00:07 config.yml
 ```
@@ -169,15 +169,91 @@ ls -la
 
 ## **🚀 Step 9: Keep Cloudflared Running After Reboot**
 
-To ensure the tunnel restarts automatically after reboot:
+
+
+If `cloudflared tunnel run your-tunnel-name` is not running in the background or restarting automatically after a system reboot, follow these steps to fix the issue:
+
+---
+
+### **1️⃣ Manually Running `cloudflared` in the Background using `nohup`**
+Run the following command to start `cloudflared` in the background:
 
 ```bash
-sudo cloudflared service install
-sudo systemctl enable cloudflared
-sudo systemctl start cloudflared
+nohup cloudflared tunnel run your-tunnel-name > cloudflared.log 2>&1 &
 ```
 
-📌 **This ensures Cloudflared starts automatically with the system.**
+🚀 **Note:** This will keep the process running even after closing the terminal session. However, you will need to start it manually after a reboot.
+
+---
+
+### **2️⃣ Adding `cloudflared` to `crontab` for Automatic Startup on Reboot**
+To ensure `cloudflared` starts automatically after a system reboot, add it to `crontab`:
+
+#### **🔹 Step 1: Open `crontab` for Editing**
+Run the following command:
+
+```bash
+crontab -e
+```
+
+You will be prompted to select an editor. The easiest option is **`nano`**, which is option **1**. Press `1` and then `Enter`.
+
+#### **🔹 Step 2: Add the Following Line to the End of the File**
+Once `crontab` is open, add this line at the end:
+
+```bash
+@reboot nohup cloudflared tunnel run your-tunnel-name > /root/.cloudflared/cloudflared.log 2>&1 &
+```
+
+📌 **Make sure to replace** `your-tunnel-name` **with your actual tunnel name.**
+
+#### **🔹 Step 3: Save and Exit**
+- If you are using `nano`:
+  1. Press `CTRL + X` to exit.
+  2. Press `Y` to save changes.
+  3. Press `Enter` to confirm.
+
+---
+
+### **3️⃣ Restart the System to Test the Configuration**
+After saving the `crontab` entry, restart your system to verify if `cloudflared` starts automatically:
+
+```bash
+reboot
+```
+
+After rebooting, check if `cloudflared` is running with:
+
+```bash
+ps aux | grep cloudflared
+```
+
+Or check the log file:
+
+```bash
+cat /root/.cloudflared/cloudflared.log
+```
+
+---
+
+### **💡 If `cloudflared` Does Not Start on Reboot**
+1. Verify that `crontab` is correctly set by running:
+
+   ```bash
+   crontab -l
+   ```
+
+   If the command is not listed, add it again.
+
+2. Ensure `cloudflared` is installed and can be manually started with:
+
+   ```bash
+   cloudflared tunnel run your-tunnel-name
+   ```
+
+3. If issues persist, consider using `systemd` for more reliable startup management.
+
+🚀 **Now your tunnel should run in the background and start automatically after every reboot!** 🎉
 
 ---
 
