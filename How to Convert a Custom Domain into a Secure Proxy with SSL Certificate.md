@@ -267,7 +267,7 @@ For each subdomain, go to **Cloudflare Dashboard** → **DNS** and add a **CNAME
 | dashboard | CNAME | your-secure-tunnel-id.cfargotunnel.com |
 | automation| CNAME | your-secure-tunnel-id.cfargotunnel.com |
 
-📌 **Replace `my-secure-tunnel-id` with your actual tunnel ID.**  
+📌 **Replace `your-secure-tunnel-id` with your actual tunnel ID.**  
 📌 **Ensure proxying is enabled (orange cloud icon).**
 
 ---
