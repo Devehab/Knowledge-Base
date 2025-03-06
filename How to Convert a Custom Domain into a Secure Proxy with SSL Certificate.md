@@ -1,6 +1,27 @@
 
 # **🔐 How to Convert a Custom Domain into a Secure Proxy with SSL Certificate**
 
+# Table of Contents
+
+- [🔐 How to Convert a Custom Domain into a Secure Proxy with SSL Certificate](#-how-to-convert-a-custom-domain-into-a-secure-proxy-with-ssl-certificate)
+  - [🌟 Why Use a Cloudflare Tunnel?](#-why-use-a-cloudflare-tunnel)
+    - [🔒 Security](#-security)
+    - [🚀 Bypassing ISP Port Restrictions](#-bypassing-isp-port-restrictions)
+    - [🌍 Ensuring SaaS Availability](#-ensuring-saas-availability)
+  - [🔎 Prerequisites](#-prerequisites)
+- [📌 Step 1: Install Cloudflared LXC on Proxmox VE](#-step-1-install-cloudflared-lxc-on-proxmox-ve)
+- [⚙ Step 2: Advanced Installation & SSL User Setup](#-step-2-advanced-installation--ssl-user-setup)
+- [📥 Step 3: Install Cloudflared in the LXC Container](#-step-3-install-cloudflared-in-the-lxc-container)
+- [🔑 Step 4: Log in to Cloudflared](#-step-4-log-in-to-cloudflared)
+- [🔄 Step 5: Create a New Tunnel](#-step-5-create-a-new-tunnel)
+- [📍 Step 6: Retrieve the Full Path of the Credentials File](#-step-6-retrieve-the-full-path-of-the-credentials-file)
+- [📝 Step 7: Configure `config.yml`](#-step-7-configure-configyml)
+- [📂 Step 8: Verify Required Files Exist](#-step-8-verify-required-files-exist)
+- [🚀 Step 9: Keep Cloudflared Running After Reboot](#-step-9-keep-cloudflared-running-after-reboot)
+- [🌍 Step 10: Add Subdomains as a Proxy in Cloudflare DNS](#-step-10-add-subdomains-as-a-proxy-in-cloudflare-dns)
+- [🎯 Final Step: Verify Everything is Working](#-final-step-verify-everything-is-working)
+- [🛑 How to Stop a Cloudflared Tunnel to Edit `config.yml` and Add a New Domain](#-how-to-stop-a-cloudflared-tunnel-to-edit-configyml-and-add-a-new-domain)
+
 ## **🌟 Why Use a Cloudflare Tunnel?**
 
 Using a **Cloudflare Tunnel** provides multiple benefits for securely exposing your services online without opening ports on your home server. Here's why you should consider using it instead of traditional port forwarding:
