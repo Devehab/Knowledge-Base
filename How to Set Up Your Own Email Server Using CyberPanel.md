@@ -1,10 +1,10 @@
 # 🚀 How to Set Up Your Own Email Server Using CyberPanel
 
-Ever wanted complete control over your email? Setting up your own self-hosted email server can seem intimidating, but with CyberPanel, it's easier than you think! CyberPanel simplifies complex tasks, automatically handling DNS and security setups for you. Let’s dive in step-by-step!\
+Ever wanted complete control over your email? Setting up your own self-hosted email server can seem intimidating, but with CyberPanel, it's easier than you think! CyberPanel simplifies complex tasks, automatically handling DNS and security setups for you. Let’s dive in step-by-step!
 
 
 
-**Note:** This guide is based on a helpful tutorial video available [here](https://www.youtube.com/watch?v=NVPeC1KLQQqgEn3z). If the video is unavailable, the creator might have removed or updated it.
+**Note:** This guide is based on a helpful tutorial video available [here](https://youtu.be/8G93NVWkXZk?si=NVPeC1KLQQqgEn3z). If the video is unavailable, the creator might have removed or updated it.
 
 Let’s dive in!
 
