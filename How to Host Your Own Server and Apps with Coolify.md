@@ -2,8 +2,9 @@
 
 Imagine having your own server where you can host automation tools, databases, and web apps without paying expensive monthly fees! Coolify is an open-source platform designed to simplify hosting, allowing you to set up and manage your apps quickly and efficiently. This guide will take you step-by-step, from setting up a server to deploying your first apps, making the process straightforward even if you've never done it before.
 
-Note: This guide is based on a helpful tutorial video available here. If the video is unavailable, the creator might have removed or updated it.
+**Note:** This guide is based on a helpful tutorial video available [here](https://youtu.be/lN67hrwj9wc). If the video is unavailable, the creator might have removed or updated it.
 
+Let’s dive in!
 ---
 
 ## 📖 Table of Contents
