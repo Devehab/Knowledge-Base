@@ -26,15 +26,15 @@ chmod +x install-docker.sh
 
 ```bash
 # Download and execute the script on macOS
-curl -fsSL https://raw.githubusercontent.com/Devehab/Knowledge-Base/main/Tools/devehab-install-docker.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Devehab/Knowledge-Base/main/Tools/devehab-install-docker.sh | sudo bash
 
 # If you encounter permission issues
 curl -fsSL https://raw.githubusercontent.com/Devehab/Knowledge-Base/main/Tools/devehab-install-docker.sh -o install-docker.sh
 chmod +x install-docker.sh
-./install-docker.sh
+sudo ./install-docker.sh
 ```
 
-Note: macOS may require user password when installing applications, so you might need to enter it during installation.
+Note: macOS requires sudo privileges to install Docker properly. You will be prompted for your password during installation.
 
 ### Ubuntu/Debian Linux 🐧
 
