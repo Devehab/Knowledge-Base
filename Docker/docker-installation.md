@@ -8,7 +8,7 @@ Download and run the appropriate script for your operating system:
 
 ```bash
 # Choose the script that matches your operating system
-curl -fsSL https://raw.githubusercontent.com/Devehab/Knowledge-Base/tree/main/Docker/install-docker-ubuntu.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/Devehab/Knowledge-Base/main/Docker/install-docker-ubuntu.sh | sudo bash
 ```
 
 ## 🔍 Alternative Method (Without Direct Execution)
@@ -17,7 +17,7 @@ For users who prefer to review scripts before execution:
 
 ```bash
 # Download the appropriate script for your OS
-curl -fsSL https://raw.githubusercontent.com/Devehab/Knowledge-Base/tree/main/Docker/install-docker-ubuntu.sh -o install-docker.sh
+curl -fsSL https://raw.githubusercontent.com/Devehab/Knowledge-Base/main/Docker/install-docker-ubuntu.sh -o install-docker.sh
 chmod +x install-docker.sh
 sudo ./install-docker.sh
 ```
@@ -28,7 +28,7 @@ sudo ./install-docker.sh
 
 ```bash
 # Download and execute the macOS script
-curl -fsSL https://raw.githubusercontent.com/Devehab/Knowledge-Base/tree/main/Docker/install-docker-macos.sh -o install-docker.sh
+curl -fsSL https://raw.githubusercontent.com/Devehab/Knowledge-Base/main/Docker/install-docker-macos.sh -o install-docker.sh
 chmod +x install-docker.sh
 sudo ./install-docker.sh
 ```
@@ -43,7 +43,7 @@ sudo apt-get update
 sudo apt-get install -y curl
 
 # Download and execute the Ubuntu/Debian script
-curl -fsSL https://raw.githubusercontent.com/Devehab/Knowledge-Base/tree/main/Docker/install-docker-ubuntu.sh -o install-docker.sh
+curl -fsSL https://raw.githubusercontent.com/Devehab/Knowledge-Base/main/Docker/install-docker-ubuntu.sh -o install-docker.sh
 chmod +x install-docker.sh
 sudo ./install-docker.sh
 ```
@@ -55,7 +55,7 @@ sudo ./install-docker.sh
 sudo yum install -y curl
 
 # Download and execute the RHEL/CentOS/Fedora script
-curl -fsSL https://raw.githubusercontent.com/Devehab/Knowledge-Base/tree/main/Docker/install-docker-fedora.sh -o install-docker.sh
+curl -fsSL https://raw.githubusercontent.com/Devehab/Knowledge-Base/main/Docker/install-docker-fedora.sh -o install-docker.sh
 chmod +x install-docker.sh
 sudo ./install-docker.sh
 ```
@@ -73,7 +73,7 @@ sudo ./install-docker.sh
 
 2. **Security**: Before executing any script from the internet, it's advisable to review it first:
    ```bash
-   curl -fsSL https://raw.githubusercontent.com/Devehab/Knowledge-Base/tree/main/Docker/install-docker-ubuntu.sh -o install-docker.sh
+   curl -fsSL https://raw.githubusercontent.com/Devehab/Knowledge-Base/main/Docker/install-docker-ubuntu.sh -o install-docker.sh
    less install-docker.sh  # To review the script content
    chmod +x install-docker.sh
    sudo ./install-docker.sh
